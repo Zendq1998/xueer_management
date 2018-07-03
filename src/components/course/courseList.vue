@@ -18,7 +18,7 @@
         <m-table-col label="操作" prop="active" width="10%">
           <template slot-scope="row">
            <div>
-             <span @click="deleteCourse(row)">
+             <span @click="deleteCourse(row.id)">
               <i class="material-icons material-icons-light delete">delete_sweep</i>
             </span>
             <span @click="onEdit(row)">
@@ -48,7 +48,7 @@ export default {
       courses: state => state.courseList.courses,
       page: state => state.courseList.page,
       totalPages: state => state.courseList.totalPages
-    })
+      })
   },
   methods: {
     ...mapActions(["fetchCoursesList", "prePage", "nextPage", "deleteCourse"]),
